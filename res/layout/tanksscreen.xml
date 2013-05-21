@@ -1,0 +1,217 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TankScreen" >
+
+    <sofia.graphics.ShapeView
+        android:id="@+id/shapeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/groundView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/city" />
+
+    <View
+        android:id="@+id/groundView"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/bullet_b" />
+
+    <SeekBar
+        android:id="@+id/powerBar"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp" />
+
+    <Button
+        android:id="@+id/leftButton"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:alpha="50"
+        android:text="&lt;"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/rightButton"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:alpha="50"
+        android:text=">"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/fireButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2dp"
+        android:text="Fire!"
+        android:textColor="@android:color/white" />
+
+    <ProgressBar
+        android:id="@+id/healthBar01"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp" />
+
+    <ProgressBar
+        android:id="@+id/healthBar02"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:id="@+id/nameView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/healthBar01"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="3dp"
+        android:text="Player Name" />
+
+    <TextView
+        android:id="@+id/nameView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nameView01"
+        android:layout_alignBottom="@+id/nameView01"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        android:text="Player Name" />
+
+    <SeekBar
+        android:id="@+id/angleBar"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/powerView"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        android:id="@+id/powerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/powerBar"
+        android:layout_alignRight="@+id/powerBar"
+        android:text="Power: 0"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/angleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/powerView"
+        android:layout_alignBottom="@+id/powerView"
+        android:layout_alignLeft="@+id/angleBar"
+        android:text="Angle: 0"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/phaseView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="P1 Turn!"
+        android:textSize="18sp" />
+
+    <View
+        android:id="@+id/tank1tur"
+        android:layout_width="56dp"
+        android:layout_height="42dp"
+        android:layout_alignLeft="@+id/tank1"
+        android:layout_alignTop="@+id/tank1"
+        android:background="@drawable/green_t2" />
+
+    <View
+        android:id="@+id/tank1"
+        android:layout_width="56dp"
+        android:layout_height="42dp"
+        android:layout_below="@+id/leftButton"
+        android:layout_toRightOf="@+id/nameView01"
+        android:background="@drawable/green_body" />
+    
+    <View
+        android:id="@+id/greenBulletView"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:alpha="0"
+        android:background="@drawable/green_bullet" />
+    
+    <View
+        android:id="@+id/redBulletView"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0"
+        android:background="@drawable/red_bullet" />
+
+    <View
+        android:id="@+id/tank2tur"
+        android:layout_width="56dp"
+        android:layout_height="42dp"
+        android:layout_alignLeft="@+id/tank2"
+        android:layout_below="@+id/rightButton"
+        android:background="@drawable/red_t2" />
+
+    <View
+        android:id="@+id/tank2"
+        android:layout_width="56dp"
+        android:layout_height="42dp"
+        android:layout_below="@+id/rightButton"
+        android:layout_toLeftOf="@+id/nameView02"
+        android:background="@drawable/red_body" />
+
+    <TextView
+        android:id="@+id/gasText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/leftButton"
+        android:layout_below="@+id/nameView01"
+        android:layout_marginLeft="5dp"
+        android:text="Gas: 30"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/gasText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/gasText1"
+        android:layout_alignBottom="@+id/gasText1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:text="Gas: 30"
+        android:textSize="10sp" />
+
+    <Button
+        android:id="@+id/replayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/gasText2"
+        android:layout_centerHorizontal="true"
+        android:alpha="0"
+        android:text="Play Again?" />
+
+</RelativeLayout>
